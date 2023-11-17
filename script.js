@@ -6,4 +6,4 @@
 //    DETERMINE rock, paper, scissor (rock = 1 to 3 / paper = 4 to 6 / scissor = 7 to 9)
 //    PRINT rock/paper/scissor
 
-let randomNumber = Math.round((Math.random()) * 10);
+let randomNumber = () => Math.round((Math.random()) * 10);
