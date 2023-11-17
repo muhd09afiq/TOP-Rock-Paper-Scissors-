@@ -17,3 +17,43 @@ let outputResult = () => {
         console.log('Scissor')
     }
 }
+
+// Write a function that plays a single round of Rock Paper Scissors
+// The function should take two parameters - the playerSelection and computerSelection - 
+// and then return a string that declares the winner of the round like so: "You Lose! Paper beats Rock"
+// 
+// GET playerinput (rock/paper/scissor)
+// GET computerselection (outputResult() = rock/paper/scissor)
+//     CASE playerinput
+//          OF rock
+//            IF computerselection rock PRINT Draw
+//            IF computerselection paper PRINT You lose
+//            IF computerselection scissor PRINT You win
+//          OF paper
+//            IF computerselection rock PRINT You win
+//            IF computerselection paper PRINT Draw
+//            IF computerselection scissor PRINT You lose
+//          OF scissor
+//            IF computerselection rock PRINT You lose
+//            IF computerselection paper PRINT You win
+//            IF computerselection scissor PRINT Draw
+
+let playerinput = prompt('Choose rock, paper or scissor');
+
+// if (playerinput == 'rock' && ){
+
+// }
+
+switch(playerinput =='rock'){
+    case outputResult == 'rock':
+        console.log('Draw');
+        break;
+    case outputResult == 'paper':
+        console.log('Draw');
+        break;
+    case outputResult == 'scissor':
+        console.log('Draw');
+        break;
+    // default:
+    //     console.log('rock paper scissor input only');
+}
