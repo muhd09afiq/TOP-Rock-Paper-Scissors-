@@ -7,3 +7,13 @@
 //    PRINT rock/paper/scissor
 
 let randomNumber = () => Math.round((Math.random()) * 10);
+
+let outputResult = () => {
+    if (randomNumber() <= 3){
+       console.log('Rock')
+    } else if (randomNumber() <= 6) {
+       console.log('Paper')
+    } else {
+        console.log('Scissor')
+    }
+}
