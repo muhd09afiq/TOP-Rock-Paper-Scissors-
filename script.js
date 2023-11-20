@@ -51,11 +51,12 @@ function outputResult(){
 //            IF computerselection scissor PRINT Draw
 
 let playerinput;
-console.log('Your choice is: ' + playerinput);
+
+
+let playerScore = 0;
 
 function playRound(){
 playerinput = (prompt('Choose rock, paper or scissor')).toLowerCase();
-
 if (playerinput === 'rock'){  
     outputResult();
     console.log('CPU choice is: ' + cpuChoice);
@@ -64,12 +65,14 @@ if (playerinput === 'rock'){
     } else if (cpuChoice === "paper"){
         console.log("You lose");
     } else if (cpuChoice === "scissor"){
+        ++playerScore;
         console.log("You win");
     }
 } else if (playerinput === 'paper'){
     outputResult();
     console.log('CPU choice is: ' + cpuChoice);
     if (cpuChoice === "rock"){
+        ++playerScore;
         console.log("You win");
     } else if (cpuChoice === "paper"){
         console.log("Draw");
@@ -82,26 +85,19 @@ if (playerinput === 'rock'){
     if (cpuChoice === "rock"){
         console.log("You lose");
     } else if (cpuChoice === "paper"){
+        ++playerScore;
         console.log("You win");
-        
     } else if (cpuChoice === "scissor"){
         console.log("Draw");
     }
 } else {
     console.log('wrong input');
-}
+};
+console.log('Your choice is: ' + playerinput);
 }
 
 let scorePlayer = 0;
 let scoreCPU = 0;
-
-function score() {
-    if (console.log(playRound) === 'You win'){
-        console.log(1);
-    } else {
-        console.log(2);
-    }
-}
 
 function game(){
     playRound();
@@ -110,6 +106,16 @@ function game(){
     playRound();
     playRound();
 }
+
+function score(){
+    if (playerScore > 2){
+        console.log('You win the game with a score of ' + playerScore)
+    } else {
+        console.log('You lose the game with a score of ' + playerScore)
+    }
+}
+game();
+score();
 
 
 // score();
