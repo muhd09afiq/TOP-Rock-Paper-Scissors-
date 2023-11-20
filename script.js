@@ -38,34 +38,32 @@ let outputResult = () => {
 //            IF computerselection paper PRINT You win
 //            IF computerselection scissor PRINT Draw
 
-let playerinput = prompt('Choose rock, paper or scissor');
-
-if (playerinput === 'rock'){
-    outputResult();
-    if (outputResult === "rock"){
-        console.log("Draw");
-    } else if (outputResult === "paper"){
-        console.log("You lose");
-    } else if (outputResult === "scissor"){
-        console.log("You win");
-    }
-}
-
-if (playerinput === 'paper'){
-    outputResult();
-    if (outputResult === "rock"){
-        console.log("You win");
-    } else if (outputResult === "paper"){
-        console.log("Draw");
-    } else if (outputResult === "scissor"){
-        console.log("You lose");
-    }
-}
-
+let playerinput = (prompt('Choose rock, paper or scissor')).toLowerCase();
 console.log('Your choice is: ' + playerinput);
 
-if (playerinput === 'scissor'){
+if (playerinput === 'rock'){  
     outputResult();
+    console.log('CPU choice is: ' + outputResult);
+    if (outputResult === "rock"){
+        console.log("Draw");
+    } else if (outputResult === "paper"){
+        console.log("You lose");
+    } else if (outputResult === "scissor"){
+        console.log("You win");
+    }
+} else if (playerinput === 'paper'){
+    outputResult();
+    console.log('CPU choice is: ' + outputResult);
+    if (outputResult === "rock"){
+        console.log("You win");
+    } else if (outputResult === "paper"){
+        console.log("Draw");
+    } else if (outputResult === "scissor"){
+        console.log("You lose");
+    }
+} else if (playerinput === 'scissor'){
+    outputResult();
+    console.log('CPU choice is: ' + outputResult);
     if (outputResult === "rock"){
         console.log("You lose");
     } else if (outputResult === "paper"){
@@ -73,6 +71,9 @@ if (playerinput === 'scissor'){
     } else if (outputResult === "scissor"){
         console.log("Draw");
     }
+} else {
+    console.log('wrong input');
 }
 
-console.log('CPU choice is: ' + outputResult);
+
+
