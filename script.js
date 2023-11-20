@@ -62,6 +62,8 @@ if (playerinput === 'paper'){
     }
 }
 
+console.log('Your choice is: ' + playerinput);
+
 if (playerinput === 'scissor'){
     outputResult();
     if (outputResult === "rock"){
@@ -73,4 +75,4 @@ if (playerinput === 'scissor'){
     }
 }
 
-console.log('CPU choise is ' + outputResult);
+console.log('CPU choice is: ' + outputResult);
