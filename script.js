@@ -7,17 +7,6 @@
 //    PRINT rock/paper/scissor
 
 let randomNumber = () => Math.round((Math.random()) * 10);
-
-// let outputResult = () => {
-//     if (randomNumber() <= 3){
-//        outputResult = 'rock';
-//     } else if (randomNumber() <= 6 && randomNumber() > 3) {
-//     outputResult = 'paper';
-//     } else {
-//         outputResult = 'scissor';    
-//     }
-// }
-
 let cpuChoice;
 
 function outputResult(){
@@ -52,8 +41,8 @@ function outputResult(){
 
 let playerinput;
 
-
 let playerScore = 0;
+let cpuScore = 0;
 
 function playRound(){
 playerinput = (prompt('Choose rock, paper or scissor')).toLowerCase();
@@ -63,6 +52,7 @@ if (playerinput === 'rock'){
     if (cpuChoice === "rock"){
         console.log("Draw");
     } else if (cpuChoice === "paper"){
+        ++cpuScore;
         console.log("You lose");
     } else if (cpuChoice === "scissor"){
         ++playerScore;
@@ -77,12 +67,14 @@ if (playerinput === 'rock'){
     } else if (cpuChoice === "paper"){
         console.log("Draw");
     } else if (cpuChoice === "scissor"){
+        ++cpuScore;
         console.log("You lose");
     }
 } else if (playerinput === 'scissor'){
     outputResult();
     console.log('CPU choice is: ' + cpuChoice);
     if (cpuChoice === "rock"){
+        ++cpuScore;
         console.log("You lose");
     } else if (cpuChoice === "paper"){
         ++playerScore;
@@ -96,35 +88,15 @@ if (playerinput === 'rock'){
 console.log('Your choice is: ' + playerinput);
 }
 
-let scorePlayer = 0;
-let scoreCPU = 0;
-
-function game(){
-    playRound();
-    playRound();
-    playRound();
-    playRound();
-    playRound();
-}
-
 function score(){
-    if (playerScore > 2){
-        console.log('You win the game with a score of ' + playerScore)
+    if (playerScore > cpuScore){
+        console.log('You win the game with a score of ' + playerScore + ' out of 5')
     } else {
-        console.log('You lose the game with a score of ' + playerScore)
-    }
+        console.log('You lose the game with a score of ' + playerScore + ' out of 5')
+    }   
 }
 game();
 score();
-
-
-// score();
-
-// function score(){
-//     if playRound
-
-// }
-
 
 // NEW function called game()
 // to play a 5 round game that keeps score and reports a winner or loser at the end.
@@ -144,7 +116,6 @@ score();
 
 function game(){
     playRound();
-    let score
     playRound();
     playRound();
     playRound();
