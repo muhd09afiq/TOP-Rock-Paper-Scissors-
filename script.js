@@ -10,11 +10,14 @@ let randomNumber = () => Math.round((Math.random()) * 10);
 
 let outputResult = () => {
     if (randomNumber() <= 3){
-       console.log('Rock')
+       console.log('CPU choise is : rock');
+       outputResult = 'rock';
     } else if (randomNumber() <= 6) {
-       console.log('Paper')
+       console.log('CPU choise is : paper');
+       outputResult = 'paper';
     } else {
-        console.log('Scissor')
+        console.log('CPU choise is : scissor');
+        outputResult = 'scissor';
     }
 }
 
@@ -39,6 +42,7 @@ let outputResult = () => {
 //            IF computerselection scissor PRINT Draw
 
 let playerinput = prompt('Choose rock, paper or scissor');
+outputResult();
 
 // if (playerinput === 'rock' && ){
     // default:
