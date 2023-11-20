@@ -40,6 +40,9 @@ let outputResult = () => {
 
 let playerinput = (prompt('Choose rock, paper or scissor')).toLowerCase();
 console.log('Your choice is: ' + playerinput);
+playRound();
+
+function playRound(){
 
 if (playerinput === 'rock'){  
     outputResult();
@@ -74,6 +77,5 @@ if (playerinput === 'rock'){
 } else {
     console.log('wrong input');
 }
-
-
+}
 
