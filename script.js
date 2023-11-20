@@ -10,11 +10,14 @@ let randomNumber = () => Math.round((Math.random()) * 10);
 
 let outputResult = () => {
     if (randomNumber() <= 3){
-       console.log('Rock')
-    } else if (randomNumber() <= 6) {
-       console.log('Paper')
+    //    console.log('rock');
+       outputResult = 'rock';
+    } else if (randomNumber() <= 6 && randomNumber() > 3) {
+    //    console.log('paper');
+    outputResult = 'paper';
     } else {
-        console.log('Scissor')
+        // console.log('scissor');
+        outputResult = 'scissor';    
     }
 }
 
@@ -39,6 +42,17 @@ let outputResult = () => {
 //            IF computerselection scissor PRINT Draw
 
 let playerinput = prompt('Choose rock, paper or scissor');
+if (playerinput === 'rock'){
+    outputResult();
+    if (outputResult === "rock"){
+        console.log("Draw");
+    } else if (outputResult === "paper"){
+        console.log("You lose");
+    } else if (outputResult === "scissor"){
+        console.log("You win");
+    }
+}
+// outputResult();
 
 // if (playerinput === 'rock' && ){
     // default:
@@ -47,38 +61,41 @@ let playerinput = prompt('Choose rock, paper or scissor');
 
 // }
 
-switch (playerinput === "rock") {
-  case outputResult === "rock":
-    console.log("Draw");
-    break;
-  case outputResult === "paper":
-    console.log("Draw");
-    break;
-  case outputResult === "scissor":
-    console.log("Draw");
-    break;
-}
+// if (playerinput === 'rock'){
+//     if (outputResult() === "rock"){
+//         console.log("Draw");
+//     } else if (outputResult() === "paper"){
+//         console.log("You lose");
+//     } else if (outputResult() === "scissor"){
+//         console.log("You win");
+//     }
+// }
 
-switch(playerinput ==='paper'){
-    case outputResult === 'rock':
-        console.log('You win');
-        break;
-    case outputResult === 'paper':
-        console.log('Draw');
-        break;
-    case outputResult === 'scissor':
-        console.log('You lose');
-        break;
-}
 
-switch(playerinput ==='scissor'){
-    case outputResult === 'rock':
-        console.log('You lose');
-        break;
-    case outputResult === 'paper':
-        console.log('You win');
-        break;
-    case outputResult === 'scissor':
-        console.log('Draw');
-        break;
-}
+// if (playerinput === 'paper'){
+// switch(playerinput ==='paper'){
+//     case outputResult === 'rock':
+//         console.log('You win');
+//         break;
+//     case outputResult === 'paper':
+//         console.log('Draw');
+//         break;
+//     case outputResult === 'scissor':
+//         console.log('You lose');
+//         break;
+// }
+// }
+
+// if (playerinput === 'scissor'){
+// switch(playerinput ==='scissor'){
+//     case outputResult === 'rock':
+//         console.log('You lose');
+//         break;
+//     case outputResult === 'paper':
+//         console.log('You win');
+//         break;
+//     case outputResult === 'scissor':
+//         console.log('Draw');
+//         break;
+// }
+// }
