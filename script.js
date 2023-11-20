@@ -10,14 +10,11 @@ let randomNumber = () => Math.round((Math.random()) * 10);
 
 let outputResult = () => {
     if (randomNumber() <= 3){
-       console.log('CPU choise is : rock');
        outputResult = 'rock';
-    } else if (randomNumber() <= 6) {
-       console.log('CPU choise is : paper');
-       outputResult = 'paper';
+    } else if (randomNumber() <= 6 && randomNumber() > 3) {
+    outputResult = 'paper';
     } else {
-        console.log('CPU choise is : scissor');
-        outputResult = 'scissor';
+        outputResult = 'scissor';    
     }
 }
 
@@ -42,47 +39,38 @@ let outputResult = () => {
 //            IF computerselection scissor PRINT Draw
 
 let playerinput = prompt('Choose rock, paper or scissor');
-outputResult();
 
-// if (playerinput === 'rock' && ){
-    // default:
-
-    //     console.log('rock paper scissor input only');
-
-// }
-
-switch (playerinput === "rock") {
-  case outputResult === "rock":
-    console.log("Draw");
-    break;
-  case outputResult === "paper":
-    console.log("Draw");
-    break;
-  case outputResult === "scissor":
-    console.log("Draw");
-    break;
+if (playerinput === 'rock'){
+    outputResult();
+    if (outputResult === "rock"){
+        console.log("Draw");
+    } else if (outputResult === "paper"){
+        console.log("You lose");
+    } else if (outputResult === "scissor"){
+        console.log("You win");
+    }
 }
 
-switch(playerinput ==='paper'){
-    case outputResult === 'rock':
-        console.log('You win');
-        break;
-    case outputResult === 'paper':
-        console.log('Draw');
-        break;
-    case outputResult === 'scissor':
-        console.log('You lose');
-        break;
+if (playerinput === 'paper'){
+    outputResult();
+    if (outputResult === "rock"){
+        console.log("You win");
+    } else if (outputResult === "paper"){
+        console.log("Draw");
+    } else if (outputResult === "scissor"){
+        console.log("You lose");
+    }
 }
 
-switch(playerinput ==='scissor'){
-    case outputResult === 'rock':
-        console.log('You lose');
-        break;
-    case outputResult === 'paper':
-        console.log('You win');
-        break;
-    case outputResult === 'scissor':
-        console.log('Draw');
-        break;
+if (playerinput === 'scissor'){
+    outputResult();
+    if (outputResult === "rock"){
+        console.log("You lose");
+    } else if (outputResult === "paper"){
+        console.log("You win");
+    } else if (outputResult === "scissor"){
+        console.log("Draw");
+    }
 }
+
+console.log('CPU choise is ' + outputResult);
