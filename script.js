@@ -63,13 +63,9 @@ function playRound() {
 
 function score() {
   if (playerScore > cpuScore) {
-    console.log(
-      "You win the game with a score of " + playerScore + " out of 5"
-    );
+    alert("You win the game with a score of " + playerScore + " out of 5");
   } else {
-    console.log(
-      "You lose the game with a score of " + playerScore + " out of 5"
-    );
+    alert("You lose the game with a score of " + playerScore + " out of 5");
   }
 }
 //game();
@@ -110,6 +106,14 @@ rock.addEventListener("click", () => {
     ++playerScore;
     result.textContent = "You win";
   }
+  if (roundNumber === 6) {
+    score();
+    playerScore = 0;
+    cpuScore = 0;
+    draw = 0;
+    roundNumber = 0;
+    result.textContent = "Result";
+  }
   displayPlayerScore.textContent = "Your score:\n" + playerScore;
   displayCpuScore.textContent = "CPU score:\n" + cpuScore;
   displayDraw.textContent = "Draw:\n" + draw;
@@ -128,6 +132,14 @@ paper.addEventListener("click", () => {
   } else if (cpuChoice === "scissor") {
     ++cpuScore;
     result.textContent = "You lose";
+  }
+  if (roundNumber === 6) {
+    score();
+    playerScore = 0;
+    cpuScore = 0;
+    draw = 0;
+    roundNumber = 0;
+    result.textContent = "Result";
   }
   displayPlayerScore.textContent = "Your score:\n" + playerScore;
   displayCpuScore.textContent = "CPU score:\n" + cpuScore;
@@ -148,6 +160,14 @@ scissor.addEventListener("click", () => {
     ++draw;
     result.textContent = "Draw";
   }
+  if (roundNumber === 6) {
+    score();
+    playerScore = 0;
+    cpuScore = 0;
+    draw = 0;
+    roundNumber = 0;
+    result.textContent = "Result";
+  }
   displayPlayerScore.textContent = "Your score:\n" + playerScore;
   displayCpuScore.textContent = "CPU score:\n" + cpuScore;
   displayDraw.textContent = "Draw:\n" + draw;
@@ -155,16 +175,21 @@ scissor.addEventListener("click", () => {
 });
 
 let result = document.createElement("h3");
+result.textContent = "Result";
 document.body.appendChild(result);
 
 let displayPlayerScore = document.createElement("div");
+displayPlayerScore.textContent = "Your score:\n" + playerScore;
 document.body.appendChild(displayPlayerScore);
 
 let displayCpuScore = document.createElement("div");
+displayCpuScore.textContent = "CPU score:\n" + cpuScore;
 document.body.appendChild(displayCpuScore);
 
 let displayDraw = document.createElement("div");
+displayDraw.textContent = "Draw:\n" + draw;
 document.body.appendChild(displayDraw);
 
 let displayRound = document.createElement("div");
+displayRound.textContent = "Round Number:\n" + roundNumber;
 document.body.appendChild(displayRound);
