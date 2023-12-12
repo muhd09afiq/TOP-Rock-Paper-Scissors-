@@ -124,14 +124,16 @@ paper.addEventListener("click", () => {
 
 scissor.addEventListener("click", () => {
   outputResult();
-  console.log("CPU choice is: " + cpuChoice);
   if (cpuChoice === "rock") {
     ++cpuScore;
-    console.log("You lose");
+    result.textContent = "You lose";
   } else if (cpuChoice === "paper") {
     ++playerScore;
-    console.log("You win");
+    result.textContent = "You win";
   } else if (cpuChoice === "scissor") {
-    console.log("Draw");
+    result.textContent = "Draw";
   }
 });
+
+let result = document.createElement("div");
+document.body.appendChild(result);
