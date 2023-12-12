@@ -77,3 +77,16 @@ function game(){
     playRound();
     playRound();
 }
+
+let rock = document.createElement('button');
+let paper = document.createElement('button');
+let scissor = document.createElement('button');
+
+rock.textContent = 'Rock';
+paper.textContent = 'Paper';
+scissor.textContent = 'Scissor';
+
+document.body.appendChild(rock);
+document.body.appendChild(paper);
+document.body.appendChild(scissor);
+
