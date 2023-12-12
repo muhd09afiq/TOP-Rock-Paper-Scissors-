@@ -15,6 +15,7 @@ let playerinput;
 
 let playerScore = 0;
 let cpuScore = 0;
+let draw = 0;
 
 function playRound() {
   playerinput = prompt("Choose rock, paper or scissor").toLowerCase();
@@ -100,6 +101,7 @@ rock.addEventListener("click", () => {
   ++roundNumber;
   outputResult();
   if (cpuChoice === "rock") {
+    ++draw;
     result.textContent = "Draw";
   } else if (cpuChoice === "paper") {
     ++cpuScore;
@@ -110,6 +112,7 @@ rock.addEventListener("click", () => {
   }
   displayPlayerScore.textContent = "Your score:\n" + playerScore;
   displayCpuScore.textContent = "CPU score:\n" + cpuScore;
+  displayDraw.textContent = "Draw:\n" + draw;
   displayRound.textContent = "Round Number:\n" + roundNumber;
 });
 
@@ -120,6 +123,7 @@ paper.addEventListener("click", () => {
     ++playerScore;
     result.textContent = "You win";
   } else if (cpuChoice === "paper") {
+    ++draw;
     result.textContent = "Draw";
   } else if (cpuChoice === "scissor") {
     ++cpuScore;
@@ -127,6 +131,7 @@ paper.addEventListener("click", () => {
   }
   displayPlayerScore.textContent = "Your score:\n" + playerScore;
   displayCpuScore.textContent = "CPU score:\n" + cpuScore;
+  displayDraw.textContent = "Draw:\n" + draw;
   displayRound.textContent = "Round Number:\n" + roundNumber;
 });
 
@@ -140,14 +145,16 @@ scissor.addEventListener("click", () => {
     ++playerScore;
     result.textContent = "You win";
   } else if (cpuChoice === "scissor") {
+    ++draw;
     result.textContent = "Draw";
   }
   displayPlayerScore.textContent = "Your score:\n" + playerScore;
   displayCpuScore.textContent = "CPU score:\n" + cpuScore;
+  displayDraw.textContent = "Draw:\n" + draw;
   displayRound.textContent = "Round Number:\n" + roundNumber;
 });
 
-let result = document.createElement("div");
+let result = document.createElement("h3");
 document.body.appendChild(result);
 
 let displayPlayerScore = document.createElement("div");
@@ -155,6 +162,9 @@ document.body.appendChild(displayPlayerScore);
 
 let displayCpuScore = document.createElement("div");
 document.body.appendChild(displayCpuScore);
+
+let displayDraw = document.createElement("div");
+document.body.appendChild(displayDraw);
 
 let displayRound = document.createElement("div");
 document.body.appendChild(displayRound);
