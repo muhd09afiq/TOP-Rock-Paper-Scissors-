@@ -90,3 +90,16 @@ document.body.appendChild(rock);
 document.body.appendChild(paper);
 document.body.appendChild(scissor);
 
+rock.addEventListener('click', () => {
+    outputResult();
+    console.log('CPU choice is: ' + cpuChoice);
+    if (cpuChoice === "rock"){
+        console.log("Draw");
+    } else if (cpuChoice === "paper"){
+        ++cpuScore;
+        console.log("You lose");
+    } else if (cpuChoice === "scissor"){
+        ++playerScore;
+        console.log("You win");
+    }
+});
