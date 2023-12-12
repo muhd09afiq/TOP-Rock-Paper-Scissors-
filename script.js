@@ -98,27 +98,26 @@ rock.addEventListener("click", () => {
   outputResult();
   console.log("CPU choice is: " + cpuChoice);
   if (cpuChoice === "rock") {
-    console.log("Draw");
+    result.textContent = "Draw";
   } else if (cpuChoice === "paper") {
     ++cpuScore;
-    console.log("You lose");
+    result.textContent = "You lose";
   } else if (cpuChoice === "scissor") {
     ++playerScore;
-    console.log("You win");
+    result.textContent = "You win";
   }
 });
 
 paper.addEventListener("click", () => {
   outputResult();
-  console.log("CPU choice is: " + cpuChoice);
   if (cpuChoice === "rock") {
     ++playerScore;
-    console.log("You win");
+    result.textContent = "You win";
   } else if (cpuChoice === "paper") {
-    console.log("Draw");
+    result.textContent = "Draw";
   } else if (cpuChoice === "scissor") {
     ++cpuScore;
-    console.log("You lose");
+    result.textContent = "You lose";
   }
 });
 
