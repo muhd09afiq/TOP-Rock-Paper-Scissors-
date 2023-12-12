@@ -97,6 +97,7 @@ document.body.appendChild(scissor);
 let roundNumber = 0;
 
 rock.addEventListener("click", () => {
+  ++roundNumber;
   outputResult();
   if (cpuChoice === "rock") {
     result.textContent = "Draw";
@@ -109,9 +110,11 @@ rock.addEventListener("click", () => {
   }
   displayPlayerScore.textContent = "Your score:\n" + playerScore;
   displayCpuScore.textContent = "CPU score:\n" + cpuScore;
+  displayRound.textContent = "Round Number:\n" + roundNumber;
 });
 
 paper.addEventListener("click", () => {
+  ++roundNumber;
   outputResult();
   if (cpuChoice === "rock") {
     ++playerScore;
@@ -124,9 +127,11 @@ paper.addEventListener("click", () => {
   }
   displayPlayerScore.textContent = "Your score:\n" + playerScore;
   displayCpuScore.textContent = "CPU score:\n" + cpuScore;
+  displayRound.textContent = "Round Number:\n" + roundNumber;
 });
 
 scissor.addEventListener("click", () => {
+  ++roundNumber;
   outputResult();
   if (cpuChoice === "rock") {
     ++cpuScore;
@@ -139,6 +144,7 @@ scissor.addEventListener("click", () => {
   }
   displayPlayerScore.textContent = "Your score:\n" + playerScore;
   displayCpuScore.textContent = "CPU score:\n" + cpuScore;
+  displayRound.textContent = "Round Number:\n" + roundNumber;
 });
 
 let result = document.createElement("div");
@@ -149,3 +155,6 @@ document.body.appendChild(displayPlayerScore);
 
 let displayCpuScore = document.createElement("div");
 document.body.appendChild(displayCpuScore);
+
+let displayRound = document.createElement("div");
+document.body.appendChild(displayRound);
